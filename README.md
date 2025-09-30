@@ -1,3 +1,3 @@
 # LeetcodeSols
 
-Luh repo of my own leetcode solutions. easy way to keep track of them.
+Repo of personal leetcode solutions. Will document my thought process, what works and what does not.
