@@ -1,0 +1,32 @@
+class Solution:
+
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+
+     # step 1: create a frequency array of characters for each 
+     # need a unique key for each anagram
+     # put the keys in the dictionary
+
+        groups = {}
+        for word in strs:
+            key = create_freq_array(word)
+            if(key not in groups):
+                groups[key] = [word]
+            else:
+                groups[key].append(word)
+        print(groups)
+        
+        ans = []
+        for key in groups:
+            ans.append(groups[key])
+
+        return ans
+
+def create_freq_array(word):
+    key = ""
+    my_list = [0] * 26
+    for c in word:
+        my_list[ord(c) - 97]+=1
+    print(my_list)
+    for count in my_list:
+        key += str(count) + "|" 
+    return key
